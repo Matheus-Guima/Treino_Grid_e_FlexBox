@@ -11,7 +11,66 @@
     grid-row: 2/4;
 }
 
+.eventos__item{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto repeat(2, 1fr) auto; /*Repeat recebe quantas vezes vai se repetir e valor da repetição */
+    grid-template-areas: 
+        'imagem imagem'
+        'nome nome'
+        'data data'
+        'local botao';
+}
+
+.eventos__item img {
+    grid-area: imagem;
+}
+
+.eventos__item h3 {
+    grid-area: nome;
+    align-self: center;
+}
+
+.eventos__item h4 {
+    grid-area: data;
+}
+
+.eventos__item h5 {
+    grid-area: local;
+    align-self: end;
+}
+
+.eventos__item button {
+    grid-area: botao;
+}
+
+.agenda__item {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        'imagem imagem'
+        'agenda__informacoes agenda__atracao';
+}
+
+.agenda__item img {
+    grid-area: imagem;
+}
+
+.agenda__informacoes {
+    grid-area: agenda__informacoes;
+}
+
+.agenda__atracao {
+    grid-area: agenda__atracao;
+}
+
 @media (min-width:720px) {
+
+    .banner {
+        grid-template-columns: calc(50% - 0.75rem) auto auto;
+        column-gap: 1.5rem;
+    }
     .banner img:nth-child(1) {
         grid-column: 1/2;  /* Ocupa a primeir coluna inteira de 3 linhas entre as colunas */
         grid-row: 1/3;
