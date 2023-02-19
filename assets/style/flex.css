@@ -108,7 +108,7 @@
     }
 
     .agenda__lista {
-        justify-content: center;
+        justify-content: end;
         column-gap: 3rem;
     }
 
